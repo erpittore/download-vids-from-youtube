@@ -1,0 +1,15 @@
+from pytube import YouTube
+
+link= input ('Paste your link here: ')
+
+yt = YouTube(link)
+
+print('Title: ',yt.title)
+print('Length of video: ',yt.length)
+
+ys = yt.streams.get_highest_resolution()
+
+print('Downloading now')
+ys.download()
+print('Download complete!')
+
